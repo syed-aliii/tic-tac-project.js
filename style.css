@@ -42,3 +42,11 @@ color: #000000;
     border: none;
     font-style: initial;
 }
+
+.newbtn{
+padding: 2vmin;
+    border-radius: 0.8rem;
+    border: none;
+    font-style: initial;
+    color: #000000;
+}
