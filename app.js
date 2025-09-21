@@ -1,7 +1,17 @@
-let boxes = document.querySelectorAll(".box")
-let resetbtn = document.querySelector(".reset-btn")
+let boxes = document.querySelectorAll(".box");
+let resetbtn = document.querySelector(".Resetbtn");
+let msgcontainer = document.querySelector(".msg-container");
+let newbtn = document.querySelector(".newbtn");
+let msg = document.querySelector(".msg");
+let hide = document.querySelector(".hide")
 
 let turno = true;
+
+const resettbtn = () =>{
+  turno = true;
+  enabbledboxes();
+  msgcontainer.classList.add("hide")
+}
 
 let winpatterns =[
     [0, 1, 2],
@@ -29,6 +39,27 @@ boxes.forEach((box)=>{
         checkWinners();
     });
 });
+
+const disabbledboxes = ()=>{
+    for(let box of boxes){
+     box.disabled = true;
+    }
+}
+const enabbledboxes = ()=>{
+    for(let box of boxes){
+     box.disabled = false;
+     box.innerText = ""
+    }
+}
+
+const showWinner = (winner) =>{
+    msg.innerText = `congratulation winner is ${winner}`
+    msgcontainer.classList.remove("hide");
+    disabbledboxes();
+    
+
+}
+
 let checkWinners = ()=>{
     for(pattern of winpatterns){
         let pos1val = boxes[pattern[0]].innerText;
@@ -39,13 +70,15 @@ let checkWinners = ()=>{
         if( pos1val != "" && pos2val != "" && pos3val != ""){
             if(pos1val === pos2val && pos2val === pos3val){
                 console.log("winner" , pos1val);
+                showWinner(pos1val);
                 
             }
         }
     }
 }
 
-
+newbtn.addEventListener("click", resettbtn);
+resetbtn.addEventListener("click", resettbtn);
 
 
 

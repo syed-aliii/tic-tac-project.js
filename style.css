@@ -36,7 +36,7 @@ font-size: 8vmin;
 color: #000000;
 
 }
-.Reset-btn{
+.Resetbtn{
     padding: 2vmin;
     border-radius: 0.8rem;
     border: none;
@@ -44,9 +44,23 @@ color: #000000;
 }
 
 .newbtn{
-padding: 2vmin;
+    gap: 2;
+padding: 0.5rem;
     border-radius: 0.8rem;
+    font-size: 1.25rem;
     border: none;
     font-style: initial;
-    color: #000000;
+    background-color: white;
+    border: none;
+    color: black;
+}
+.msg{
+    font-size: 6vmin;
+}
+.msg-container{
+    height: 20vmin;
+}
+
+.hide{
+    display: none;
 }
